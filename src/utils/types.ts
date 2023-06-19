@@ -28,3 +28,12 @@ export interface DonationRequestDetails {
   patient: DonationReuqestPatientDetails
   profile: DonationReuqestProfileDetails
 }
+
+export type BloodGroup = 'O+' | 'O-' | 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-'
+
+export interface NavbarItem {
+  name: string
+  route: string
+  type: 'normal' | 'button'
+  children: NavbarItem[]
+}

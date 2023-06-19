@@ -1,16 +1,22 @@
 /* eslint-disable quotes */
 import {
+  BloodGroup,
   DonationRequestDetails,
   DonationReuqestPatientDetails,
   Heading,
+  NavbarItem,
   TestimonialType
 } from './types'
 import testimonial1 from 'src/assets/avatars/testimonial1.png'
 import testimonial2 from 'src/assets/avatars/testimonial2.png'
 import testimonial3 from 'src/assets/avatars/testimonial3.png'
 import person1 from 'src/assets/avatars/person3.png'
-// import person2 from 'src/assets/avatars/person2.png'
-// import person3 from 'src/assets/avatars/person1.png'
+import {
+  ABOUT_US_PAGE_ROUTE,
+  HOME_PAGE_ROUTE,
+  REGISTER_PAGE_ROUTE,
+  SIGNIN_PAGE_ROUTE
+} from './urls'
 
 // Button Labels
 export const SIGN_IN = 'Sign In'
@@ -25,6 +31,53 @@ export const ABOUT_US = 'About Us'
 export const PATIENT = 'Patient'
 export const DONOR = 'Donor'
 export const VOLUNTEER = 'Volunteer'
+
+// Navbar items
+export const NAVBAR_ITEMS: NavbarItem[] = [
+  {
+    name: HOME,
+    route: HOME_PAGE_ROUTE,
+    type: 'normal',
+    children: []
+  },
+  {
+    name: ABOUT_US,
+    route: ABOUT_US_PAGE_ROUTE,
+    type: 'normal',
+    children: []
+  },
+  {
+    name: REGISTER_NOW,
+    route: REGISTER_PAGE_ROUTE,
+    type: 'normal',
+    children: [
+      {
+        name: PATIENT,
+        route: REGISTER_PAGE_ROUTE,
+        type: 'normal',
+        children: []
+      },
+      {
+        name: DONOR,
+        route: REGISTER_PAGE_ROUTE,
+        type: 'normal',
+        children: []
+      },
+      {
+        name: VOLUNTEER,
+        route: REGISTER_PAGE_ROUTE,
+        type: 'normal',
+        children: []
+      }
+    ]
+  },
+  {
+    name: SIGN_IN,
+    route: SIGNIN_PAGE_ROUTE,
+    type: 'button',
+    children: []
+  }
+]
 
 // Footer Labels
 export const CONTACT_OUR_TEAM = 'Contact to our team'
@@ -73,7 +126,16 @@ export const PATIENT_REQUEST_LABELS: DonationReuqestPatientDetails = {
   contact: 'Contact:',
   extraDetails: 'More details:'
 }
-export const BLOOD_GROUPS = ['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-']
+export const BLOOD_GROUPS: BloodGroup[] = [
+  'O+',
+  'O-',
+  'A+',
+  'A-',
+  'B+',
+  'B-',
+  'AB+',
+  'AB-'
+]
 
 // Sample Responses
 export const SAMPLE_DONATION_DETAILS: DonationRequestDetails = {
