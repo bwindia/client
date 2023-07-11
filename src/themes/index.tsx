@@ -37,7 +37,6 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     caption1: true
-
     body3: true
     link_text: true
   }
@@ -46,6 +45,7 @@ declare module '@mui/material/Typography' {
 export let theme = createTheme({
   palette: {
     primary: {
+      300: '#F14164E5',
       main: '#F14164'
     },
 
@@ -67,25 +67,41 @@ export let theme = createTheme({
       card_hover: '#F3F2F5',
       button_hover: '#F4EFFF'
     }
-  },
+  }
+})
+
+theme = createTheme(theme, {
   typography: {
     fontFamily: 'Poppins',
     h1: {
       fontStyle: 'regular',
       fontSize: '64px',
       lineHeight: '75px',
-      fontWeight: 'bolder'
+      fontWeight: 'bolder',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '36px',
+        lineHeight: '38.4px'
+      }
     },
     h3: {
       fontStyle: 'regular',
       fontSize: '36px',
       lineHeight: '49px',
-      fontWeight: 'bolder'
+      fontWeight: 'bold',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '24px',
+        lineHeight: '28.8px'
+      }
     },
     h4: {
       fontStyle: 'regular',
       fontSize: '24px',
       lineHeight: '36px'
+    },
+    h5: {
+      fontStyle: 'regular',
+      fontSize: '20px',
+      lineHeight: '30px'
     },
     caption1: {
       fontStyle: 'regular',
@@ -118,6 +134,18 @@ export let theme = createTheme({
 
 theme = createTheme(theme, {
   components: {
+    // MuiTypography: {
+    //   defaultProps: {
+    //     variantMapping: {
+    //       h5: 'span',
+    //       h6: 'h2',
+    //       subtitle1: 'h2',
+    //       subtitle2: 'h2',
+    //       body1: 'span',
+    //       body2: 'span'
+    //     }
+    //   }
+    // },
     // MuiDialog: {
     //   styleOverrides: {
     //     root: {

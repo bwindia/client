@@ -27,6 +27,10 @@ module.exports = {
       {
         test: /\.(ttf|eot|svg|png|jpg|jpeg)$/,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(docx|md)$/,
+        use: 'file-loader'
       }
     ]
   },
@@ -34,7 +38,10 @@ module.exports = {
     alias: {
       src: path.resolve(__dirname, '..', './src')
     },
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    fallback: {
+      path: require.resolve('path-browserify')
+    }
   },
   output: {
     filename: 'bundle.js',
