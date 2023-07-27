@@ -2,8 +2,6 @@ import { Box, Grid, styled } from '@mui/material'
 import React from 'react'
 import bloodDrop from 'src/assets/images/blood-drop-collage.png'
 import Typography from 'src/components/atoms/Typography'
-import JounreySection from 'src/components/molecules/JourneySection'
-import Footer from 'src/components/organisms/Footer'
 import ProgramSection from 'src/components/organisms/ProgramSection'
 import TeamSection from 'src/components/organisms/TeamSection'
 import theme from 'src/themes'
@@ -21,7 +19,7 @@ const PrimaryBackgroundBox = styled(Box)(({ theme }) => ({
 }))
 
 const NumberTypography = styled(Typography)({
-  fontFamily: 'Manrope'
+  fontFamily: 'Manrope !important'
 })
 
 const AboutUsPage = () => {
@@ -135,10 +133,6 @@ const AboutUsPage = () => {
       <Box id='team' px='8vw' py={{ xs: 4, md: 8 }}>
         <TeamSection />
       </Box>
-      <Box id='journey' px='8vw' py={{ xs: 4, md: 8 }}>
-        <JounreySection />
-      </Box>
-      <Footer />
     </>
   )
 }

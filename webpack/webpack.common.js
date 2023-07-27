@@ -25,7 +25,7 @@ module.exports = {
         type: 'asset/inline'
       },
       {
-        test: /\.(ttf|eot|svg|png|jpg|jpeg)$/,
+        test: /\.(ttf|eot|svg|png|jpg|jpeg|mp4)$/,
         type: 'asset/resource'
       },
       {

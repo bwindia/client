@@ -13,10 +13,10 @@ import {
   THALASSEMIA_INFO,
   WHAT_THALASSEMIA
 } from 'src/utils/constants'
-import Footer from 'src/components/organisms/Footer'
 import TestimonialGroup from 'src/components/organisms/TestimonialGroup'
 import OurApproach from 'src/components/molecules/OurApproach'
 import VisionValuesSection from 'src/components/molecules/VisionValues'
+import JounreySection from 'src/components/molecules/JourneySection'
 
 interface SectionProps {
   px?: string
@@ -26,16 +26,23 @@ interface SectionProps {
 
 export const Section = styled(Box)(
   ({
-    px = '8vw',
-    py = '8vw',
     background = theme.palette.structural.white,
     ...props
   }: SectionProps) => ({
     background,
-    padding: `${py} ${px}`
+    padding: '4rem 8vw',
+    [theme.breakpoints.down('md')]: {
+      padding: '2rem 8vw'
+    }
   })
 )
-export const ImpactCard = styled(Grid)({
+
+export const ImapctGroup = styled(Grid)({
+  maxWidth: 'calc((300px + 24px) * 3)',
+  margin: 'auto'
+})
+
+export const ImpactCard = styled(Box)({
   width: '300px',
   maxWidth: '300px !important',
   padding: '2rem 0',
@@ -53,7 +60,7 @@ const HomePage = () => {
   return (
     <>
       <Section id='hero'>
-        <Grid container alignItems='center' columnSpacing={'8vw'}>
+        <Grid container alignItems='center' rowGap={3} columnSpacing={'8vw'}>
           <Grid item xs={12} md={6}>
             <img src={heroSection} width='100%' />
           </Grid>
@@ -68,18 +75,20 @@ const HomePage = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <Button variant='contained' size='large'>
-                  {GET_BLOOD_NOW}
-                </Button>
+                <a
+                  href='https://api.whatsapp.com/send/?phone=%2B918688468702&text=hello&type=phone_number&app_absent=0'
+                  target='blank'
+                >
+                  <Button variant='contained' size='large'>
+                    {GET_BLOOD_NOW}
+                  </Button>
+                </a>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
       </Section>
-      {/* <Section id='donation-requests' py='0'>
-        <DonationRequestsGroup />
-      </Section> */}
-      <Section id='thalassemia-stats' py='0'>
+      <Section id='thalassemia-stats'>
         <Grid container rowGap={12} direction='column'>
           <Grid item>
             <Grid container direction='column' rowGap={4}>
@@ -101,7 +110,8 @@ const HomePage = () => {
                 <Grid
                   container
                   columns={{ xs: 1, md: 2, lg: 3 }}
-                  justifyContent='space-between'
+                  rowGap={4}
+                  justifyContent={{ xs: 'center', md: 'space-between' }}
                 >
                   {THALASSEMIA_INFO.map((item, index) => (
                     <Grid item xs='auto' key={`thalassemia-info-${index}`}>
@@ -127,47 +137,58 @@ const HomePage = () => {
             </Grid>
           </Grid>
           <Grid item>
-            <Grid container gap={3} justifyContent='center'>
+            <ImapctGroup
+              container
+              rowGap={3}
+              columnSpacing={3}
+              justifyContent='center'
+              columns={{ xs: 1, sm: 3 }}
+            >
               {THALASSEMIA_IMPACT.map((item, index) => (
-                <ImpactCard item key={`thalassemia-impact-${index}`}>
-                  <Grid
-                    container
-                    alignItems='center'
-                    direction='column'
-                    rowGap={3}
-                  >
-                    <Image
-                      item
-                      display='flex'
-                      justifyContent='center'
+                <Grid item key={`thalassemia-impact-${index}`}>
+                  <ImpactCard>
+                    <Grid
+                      container
                       alignItems='center'
+                      direction='column'
+                      rowGap={3}
                     >
-                      <img src={item.icon} width='40' height='40' />
-                    </Image>
-                    <Grid item>
-                      <Grid container direction='column' alignItems='center'>
-                        <Grid item>
-                          <Typography variant='h3'>{item.count}</Typography>
-                        </Grid>
-                        <Grid item>
-                          <Typography color={theme.palette.text.secondary}>
-                            {item.content}
-                          </Typography>
+                      <Image
+                        item
+                        display='flex'
+                        justifyContent='center'
+                        alignItems='center'
+                      >
+                        <img src={item.icon} width='40' height='40' />
+                      </Image>
+                      <Grid item>
+                        <Grid container direction='column' alignItems='center'>
+                          <Grid item>
+                            <Typography variant='h3'>{item.count}</Typography>
+                          </Grid>
+                          <Grid item>
+                            <Typography color={theme.palette.text.secondary}>
+                              {item.content}
+                            </Typography>
+                          </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
-                  </Grid>
-                </ImpactCard>
+                  </ImpactCard>
+                </Grid>
               ))}
-            </Grid>
+            </ImapctGroup>
           </Grid>
         </Grid>
       </Section>
       <Section id='approach'>
         <OurApproach />
       </Section>
-      <Section id='vision-values' py='0'>
+      <Section id='vision-values'>
         <VisionValuesSection />
+      </Section>
+      <Section id='journey'>
+        <JounreySection />
       </Section>
       <Section id='partners'>
         <Grid container direction='column' rowGap={6}>
@@ -187,15 +208,18 @@ const HomePage = () => {
           </Grid>
         </Grid>
       </Section>
-      <Section id='testimonials' py='0'>
-        <Grid container justifyContent='center' rowGap={12} pb='8vw'>
+      <Section id='testimonials'>
+        <Grid container justifyContent='center' direction='column' rowGap={4}>
           <Grid item>
-            <Typography variant='h3'>{TESTIMONIAL_SECTION_TITLE}</Typography>
+            <Typography variant='h3' textAlign='center'>
+              {TESTIMONIAL_SECTION_TITLE}
+            </Typography>
           </Grid>
-          <TestimonialGroup />
+          <Grid item>
+            <TestimonialGroup />
+          </Grid>
         </Grid>
       </Section>
-      <Footer />
     </>
   )
 }

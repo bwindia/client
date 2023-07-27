@@ -5,10 +5,8 @@ import {
   DonationReuqestPatientDetails,
   Heading,
   IArticle,
-  IFaqSection,
   IJourney,
   IProgram,
-  ITeamMember,
   NavbarItem,
   TestimonialType
 } from './types'
@@ -38,19 +36,22 @@ import testimonial6 from 'src/assets/images/testimonials/testimonial6.png'
 import testimonial7 from 'src/assets/images/testimonials/testimonial7.png'
 import testimonial8 from 'src/assets/images/testimonials/testimonial8.png'
 
-// Team members images
-import teamMember1 from 'src/assets/images/team/Sandeep.jpg'
-import teamMember3 from 'src/assets/images/team/Sharmila.jpg'
-import teamMember4 from 'src/assets/images/team/navya.jpg'
-import teamMember6 from 'src/assets/images/team/Pallavi.jpeg'
-import teamMember7 from 'src/assets/images/team/SatyaSai.jpg'
-import teamMember8 from 'src/assets/images/team/Trishadhi.jpeg'
+// Journey images
+import journey1 from 'src/assets/images/journey/journey1.png'
+import journey2 from 'src/assets/images/journey/journey2.png'
+import journey3 from 'src/assets/images/journey/journey3.png'
+import journey4 from 'src/assets/images/journey/journey4.png'
+import journey5 from 'src/assets/images/journey/journey5.png'
+import journey6 from 'src/assets/images/journey/journey6.png'
+import journey7 from 'src/assets/images/journey/journey7.png'
 
 import {
   ABOUT_US_PAGE_ROUTE,
   AWARENESS_PAGE_ROUTE,
+  CONTACT_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
-  HOME_PAGE_ROUTE
+  HOME_PAGE_ROUTE,
+  PRIVACY_POLICY_PAGE_ROUTE
 } from './urls'
 import thalassemia1 from 'src/assets/illustrations/thalassemia-1.svg'
 import thalassemia2 from 'src/assets/illustrations/thalassemia-2.svg'
@@ -74,17 +75,41 @@ export const VOLUNTEER = 'Volunteer'
 
 // Footer Labels
 export const CONTACT_OUR_TEAM = 'Contact to our team'
+export const PRIVACY_POLICY = 'Privacy Policy'
+export const TERMS_CONDITIONS = 'Terms and Conditions'
+export const CONTACT_US = 'Contact us'
 export const FOOTER_LABELS = [
-  ['Services', 'Email Marketing', 'Campaigns', 'Branding', 'Offline'],
-  ['About', 'Our Stories', 'Benefits', 'Team', 'Carrer'],
-  ['Help', 'FAQs', 'Newsletter']
+  {
+    label: HOME,
+    path: HOME_PAGE_ROUTE
+  },
+  {
+    label: ABOUT_US,
+    path: ABOUT_US_PAGE_ROUTE
+  },
+  {
+    label: 'Donate',
+    path: DONATION_PAGE_ROUTE
+  },
+  {
+    label: PRIVACY_POLICY,
+    path: PRIVACY_POLICY_PAGE_ROUTE
+  },
+  {
+    label: TERMS_CONDITIONS,
+    path: PRIVACY_POLICY_PAGE_ROUTE
+  },
+  {
+    label: CONTACT_US,
+    path: CONTACT_PAGE_ROUTE
+  }
 ]
 
 // Home page
 export const HERO_SECTION: Heading = {
   title: 'Save Life, Donate Blood',
   subContent:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+    'Your blood can be the lifeline for Thalassemia patients. Join us as a donor and make a life-saving impact. Together, we can bring hope, transform lives, and pave the way for a Thalassemia-free future. Be the change you want to see!'
 }
 export const TESTIMONIAL_SECTION_TITLE = 'Testimonials'
 export const TESTIMONIALS: TestimonialType[] = [
@@ -331,57 +356,6 @@ export const ARTICLES: IArticle[] = [
   }
 ]
 
-// FAQs section
-export const FAQS: IFaqSection[] = [
-  {
-    topic: 'Understanding Thalassemia',
-    data: [
-      {
-        question: 'How is thalassemia diagnosed?',
-        answer:
-          'Thalassemia is a genetic blood disorder that affects the production of hemoglobin, a protein found in red blood cells that carries oxygen throughout the body. There are several types of thalassemia, ranging from mild to severe.'
-      }
-    ]
-  },
-  {
-    topic: 'Treatment and Management',
-    data: [{ question: '', answer: '' }]
-  },
-  {
-    topic: 'Laws and Policies',
-    data: [
-      {
-        question: 'What is Thalassemia?',
-        answer: ''
-      },
-      { question: 'What are the symptoms of thalassemia?', answer: '' },
-      {
-        question: 'How is thalassemia diagnosed?',
-        answer:
-          'Thalassemia is a genetic blood disorder that affects the production of hemoglobin, a protein found in red blood cells that carries oxygen throughout the body. There are several types of thalassemia, ranging from mild to severe.'
-      },
-      { question: 'Can thalassemia be prevented?', answer: '' },
-      { question: 'Is thalassemia curable?', answer: '' }
-    ]
-  },
-  {
-    topic: 'Myths About Blood donation',
-    data: []
-  },
-  {
-    topic: 'Blood Bridge',
-    data: []
-  },
-  {
-    topic: 'Transfusion related issues',
-    data: []
-  },
-  {
-    topic: 'Research and Future development',
-    data: []
-  }
-]
-
 // Navbar items
 export const NAVBAR_ITEMS: NavbarItem[] = [
   {
@@ -505,15 +479,18 @@ export const PROGRAMS: IProgram[] = [
 export const JOURNEY: IJourney[] = [
   {
     date: '14 April 2020',
-    description: ['The Beginning']
+    description: ['The Beginning'],
+    image: journey1
   },
   {
     date: 'May 2020',
-    description: ['First Active Blood Bridge']
+    description: ['First Active Blood Bridge'],
+    image: journey2
   },
   {
     date: 'July 2020',
-    description: ['Fifty Voluntary', 'Blood Donations']
+    description: ['Fifty Voluntary', 'Blood Donations'],
+    image: journey3
   },
   {
     date: 'February 2021',
@@ -524,62 +501,26 @@ export const JOURNEY: IJourney[] = [
       '30 Volunteers',
       '4 Partner NGOs',
       '1 Blood Bank'
-    ]
+    ],
+    image: journey4
   },
   {
     date: 'November 2021',
-    description: ['Voluntary Blood', 'Crossed 1000', 'Donations']
+    description: ['Voluntary Blood', 'Crossed 1000', 'Donations'],
+    image: journey5
   },
   {
     date: 'November 2022',
-    description: ['Volunteer Recruitment', 'First On Ground', 'Drive Conducted']
+    description: [
+      'Volunteer Recruitment',
+      'First On Ground',
+      'Drive Conducted'
+    ],
+    image: journey6
   },
   {
     date: 'December 2022',
-    description: ['Full time Employee', 'Onboarded First']
-  }
-]
-
-// Team members
-export const TEAM_MEMBERS: ITeamMember[] = [
-  {
-    image: teamMember1,
-    name: 'Sandeep Kavety',
-    role: 'Co-Founder & Technology Head'
-  },
-  {
-    image: teamMember1,
-    name: 'Krishna Vamshi',
-    role: 'Co-Founder & Strategy Head'
-  },
-  {
-    image: teamMember3,
-    name: 'Sharmila',
-    role: 'Blood Bridge Lead'
-  },
-  {
-    image: teamMember4,
-    name: 'Navya Neela',
-    role: 'Blood Bridge Lead'
-  },
-  {
-    image: '',
-    name: 'Suksheetha',
-    role: 'Design Lead'
-  },
-  {
-    image: teamMember6,
-    name: 'Sai Pallavi',
-    role: 'Strategic Partnerships Lead'
-  },
-  {
-    image: teamMember7,
-    name: 'Satya Sai',
-    role: 'Human Capital Lead'
-  },
-  {
-    image: teamMember8,
-    name: 'Trishadhi',
-    role: 'Awareness & Content Lead'
+    description: ['Full time Employee', 'Onboarded First'],
+    image: journey7
   }
 ]

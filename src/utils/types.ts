@@ -72,6 +72,7 @@ export interface IProgram {
 export interface IJourney {
   date: string
   description: string[]
+  image: string
 }
 
 export interface ITeamMember {

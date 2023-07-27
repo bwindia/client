@@ -24,7 +24,11 @@ const DonationPage = () => {
               <Typography variant='h3' component='span'>
                 Contribute Now and Join the Fight Against&nbsp;
               </Typography>
-              <Typography variant='h3' color={theme.palette.primary.main} component='span'>
+              <Typography
+                variant='h3'
+                color={theme.palette.primary.main}
+                component='span'
+              >
                 Thalassemia&nbsp;
               </Typography>
               <Typography variant='h3' component='span'>
@@ -52,7 +56,9 @@ const DonationPage = () => {
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     UPI ID: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>Yet to be updated</Typography>
+                  <Typography variant='h5' component='span'>
+                    Yet to be updated
+                  </Typography>
                 </Grid>
               </Grid>
               <Divider />
@@ -62,7 +68,9 @@ const DonationPage = () => {
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     Bank Name: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>Axis Bank Limited</Typography>
+                  <Typography variant='h5' component='span'>
+                    Axis Bank Limited
+                  </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant='h5' fontWeight={1000} component='span'>
@@ -76,13 +84,17 @@ const DonationPage = () => {
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     Account Number: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>922010064997144</Typography>
+                  <Typography variant='h5' component='span'>
+                    922010064997144
+                  </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     IFSC Code: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>UTIB0000425</Typography>
+                  <Typography variant='h5' component='span'>
+                    UTIB0000425
+                  </Typography>
                 </Grid>
               </Grid>
               <Divider />
@@ -91,18 +103,27 @@ const DonationPage = () => {
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     Swift Code: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>AXISINBB515</Typography>
+                  <Typography variant='h5' component='span'>
+                    AXISINBB515
+                  </Typography>
                 </Grid>
                 <Grid item>
                   <Typography variant='h5' fontWeight={1000} component='span'>
                     80G Exception: &nbsp;
                   </Typography>
-                  <Typography variant='h5' component='span'>YES</Typography>
+                  <Typography variant='h5' component='span'>
+                    YES
+                  </Typography>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item>
-              <Button variant='contained'>Contribute Now</Button>
+              <a
+                href='https://milaap.org/fundraisers/support-poor-patients-29'
+                target='blank'
+              >
+                <Button variant='contained'>Contribute Now</Button>
+              </a>
             </Grid>
           </Grid>
         </Grid>

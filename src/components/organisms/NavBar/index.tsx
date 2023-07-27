@@ -4,18 +4,21 @@ import Button from 'src/components/atoms/Button'
 import Typography from 'src/components/atoms/Typography'
 import { NAVBAR_ITEMS, REGISTER_NOW } from 'src/utils/constants'
 import theme from 'src/themes'
-import logo from 'src/assets/logo.svg'
+import logo from 'src/assets/logos/BW Long Logo.png'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { NavbarItem } from 'src/utils/types'
 import menuIcon from 'src/assets/icons/menu.svg'
 import dropdownIcon from 'src/assets/icons/down-arrow.svg'
-
-interface Props {}
+import { HOME_PAGE_ROUTE } from 'src/utils/urls'
+import { getRouteParent } from 'src/utils/functions'
 
 const NavBox = styled(Box)({
   //   width: "100%",
   background: theme.palette.structural.white,
-  padding: '0 8vw'
+  padding: '0 8vw',
+  position: 'sticky',
+  top: 0,
+  zIndex: 100
 })
 
 const NavItem = styled(Grid)((props: { active: boolean }) => ({
@@ -36,10 +39,16 @@ const MobileMenuItems = styled(Menu)(() => ({
   }
 }))
 
-const Navbar = (props: Props) => {
+const Logo = styled('img')({
+  cursor: 'pointer'
+})
+
+const Navbar = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const [active, setActive] = useState<string>(location.pathname)
+  const [active, setActive] = useState<string>(
+    getRouteParent(location.pathname)
+  )
 
   const navigateToRoute = (route: string) => {
     setActive(route)
@@ -139,6 +148,7 @@ const Navbar = (props: Props) => {
       <Grid item>
         <Button
           size='large'
+          outlineColor={theme.palette.primary.main}
           variant={props.active === props.item.route ? 'contained' : 'outlined'}
           onClick={() => {
             navigateToRoute(props.item.route)
@@ -230,7 +240,14 @@ const Navbar = (props: Props) => {
       <NavBox>
         <Grid container justifyContent='space-between' alignItems='center'>
           <Grid item>
-            <img src={logo} width={100} height={100} />
+            <Logo
+              src={logo}
+              width={100}
+              height={100}
+              onClick={() => {
+                navigateToRoute(HOME_PAGE_ROUTE)
+              }}
+            />
           </Grid>
           <Grid item>
             <Grid container display={{ xs: 'flex', lg: 'none' }}>

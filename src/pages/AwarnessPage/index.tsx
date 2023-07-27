@@ -19,6 +19,7 @@ import ArticleCard from 'src/components/molecules/ArticleCard'
 import { IArticle } from 'src/utils/types'
 import FaqsGroup from 'src/components/organisms/Faqs'
 import { ARTICLES } from '../BlogPage/blogs'
+import awarenessVideo from 'src/assets/videos/why-Blood-Donation.mp4'
 
 const SearchBackdrop = styled(Grid)(({ theme }) => ({
   background: `${theme.palette.primary.main}`,
@@ -62,6 +63,10 @@ const HiddenBox = styled(Box)((props: { search?: boolean }) => ({
 const BlogsView = styled(Grid)(() => ({
   overflowY: 'auto'
 }))
+
+const Video = styled('video')({
+  borderRadius: '1rem'
+})
 
 const AwarenessPage = () => {
   const [searchValue, setSearchValue] = useState<string>('')
@@ -118,12 +123,18 @@ const AwarenessPage = () => {
             justifyContent='center'
             alignItems='center'
             columnGap={6}
+            rowGap={3}
           >
             <Grid item xs>
-              <img src={landingPoster} width='100%' />
+              <Video
+                src={awarenessVideo}
+                poster={landingPoster}
+                controls
+                width='100%'
+              />
             </Grid>
             <Grid item xs>
-              <Grid container direction='column' rowGap={6}>
+              <Grid container direction='column' rowGap={{ xs: 3, md: 6 }}>
                 <Grid item>
                   <Typography variant='h3'>{DONATION_VIDEO_TITLE}</Typography>
                 </Grid>
@@ -142,16 +153,20 @@ const AwarenessPage = () => {
       </HiddenBox>
       <Section id='blogs' py='0'>
         <HiddenBox search={searchValue !== ''}>
-          <Typography variant='h3'>{BLOGS_HEADING}</Typography>
+          <Typography variant='h3' textAlign='center'>{BLOGS_HEADING}</Typography>
         </HiddenBox>
         <BlogsView
           mt={3.75}
           container
           columnGap={5.5}
-          flexWrap={{ xs: 'nowrap', md: 'wrap' }}
+          flexWrap={{ xs: 'nowrap', sm: 'wrap' }}
+          columns={{ xs: 1, sm: 2, lg: 3, xl: 4 }}
+          justifyContent='center'
         >
           {blogs.map((item, index) => (
-            <ArticleCard key={`article-${index}`} data={item} />
+            <Grid item xs={1} key={`article-${index}`}>
+              <ArticleCard data={item} />
+            </Grid>
           ))}
         </BlogsView>
       </Section>

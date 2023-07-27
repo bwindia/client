@@ -1,30 +1,47 @@
-import { Grid } from '@mui/material'
+import { Grid, styled } from '@mui/material'
 import React from 'react'
-import { createSearchParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Avatar from 'src/components/atoms/Avatar'
 import Typography from 'src/components/atoms/Typography'
 import theme from 'src/themes'
 import { IArticle } from 'src/utils/types'
-import { BLOG_PAGE_ROUTE } from 'src/utils/urls'
+import { BLOG_PATH } from 'src/utils/urls'
 
 interface Props {
   data: IArticle
 }
+
+const PointerCard = styled(Grid)({
+  cursor: 'pointer'
+})
+
+const Title = styled(Typography)({
+  height: '36px',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  width: '22rem'
+})
+
+const ArticleContent = styled(Typography)({
+  display: '-webkit-box',
+  WebkitBoxOrient: 'vertical',
+  WebkitLineClamp: 3,
+  textOverflow: 'ellipsis',
+  overflow: 'hidden',
+  width: '22rem'
+})
 
 const ArticleCard = (props: Props) => {
   const navigate = useNavigate()
   const { data } = props
 
   const handleArticleClick = () => {
-    const params = { id: data.id }
-    navigate({
-      pathname: BLOG_PAGE_ROUTE,
-      search: createSearchParams(params).toString()
-    })
+    navigate(BLOG_PATH(data.id))
   }
 
   return (
-    <Grid
+    <PointerCard
       container
       direction='column'
       px={1.5}
@@ -42,12 +59,12 @@ const ArticleCard = (props: Props) => {
         />
       </Grid>
       <Grid item>
-        <Typography variant='h4'>{data.title.substring(0, 47)}</Typography>
+        <Title variant='h4'>{data.title}</Title>
       </Grid>
       <Grid item>
-        <Typography color={theme.palette.text.secondary} variant='body2'>
-          {data.article.substring(0, 175)}...
-        </Typography>
+        <ArticleContent color={theme.palette.text.secondary} variant='body2'>
+          {data.article}
+        </ArticleContent>
       </Grid>
       <Grid item>
         <Grid container columnGap={2}>
@@ -71,7 +88,7 @@ const ArticleCard = (props: Props) => {
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </PointerCard>
   )
 }
 

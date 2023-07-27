@@ -8,11 +8,13 @@ import {
   AWARENESS_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
-  HOME_PAGE_ROUTE
+  HOME_PAGE_ROUTE,
+  PRIVACY_POLICY_PAGE_ROUTE
 } from './utils/urls'
 import AboutUsPage from './pages/AboutUsPage'
 import BlogPage from './pages/BlogPage'
 import DonationPage from './pages/DonationPage'
+import PolicyPage from './pages/PolicyPage'
 
 const App = () => {
   return (
@@ -25,6 +27,7 @@ const App = () => {
           <Route path={AWARENESS_PAGE_ROUTE} element={<AwarenessPage />} />
           <Route path={BLOG_PAGE_ROUTE} element={<BlogPage />} />
           <Route path={DONATION_PAGE_ROUTE} element={<DonationPage />} />
+          <Route path={PRIVACY_POLICY_PAGE_ROUTE} element={<PolicyPage />} />
         </Route>
       </Routes>
     </>
