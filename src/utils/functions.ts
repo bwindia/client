@@ -1,9 +1,7 @@
 import { HOME_PAGE_ROUTE } from './urls'
 
 export const calculateTimeDifference = (date: Date): string => {
-  console.log(new Date(date))
   const currentTime = new Date()
-  console.log(currentTime)
 
   const milliseconds = currentTime.getTime() - new Date(date).getTime()
   let seconds = Math.floor(milliseconds / 1000)

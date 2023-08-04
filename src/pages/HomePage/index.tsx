@@ -140,7 +140,7 @@ const HomePage = () => {
             <ImapctGroup
               container
               rowGap={3}
-              columnSpacing={3}
+              columnGap={3}
               justifyContent='center'
               columns={{ xs: 1, sm: 3 }}
             >

@@ -61,7 +61,10 @@ const HiddenBox = styled(Box)((props: { search?: boolean }) => ({
 }))
 
 const BlogsView = styled(Grid)(() => ({
-  overflowY: 'auto'
+  overflowY: 'auto',
+  maxWidth: 'calc(492px * 3)',
+  marginLeft: 'auto',
+  marginRight: 'auto'
 }))
 
 const Video = styled('video')({

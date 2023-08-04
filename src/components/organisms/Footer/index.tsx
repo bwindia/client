@@ -67,6 +67,31 @@ const SocialIcon = styled('a')({
   cursor: 'pointer'
 })
 
+export const SocialGroup = () => {
+  return (
+    <Grid container columnGap={5}>
+      <Grid item>
+        <SocialIcon
+          href='https://www.facebook.com/BloodWarriors'
+          target='blank'
+        >
+          <img src={facebook} height={22} />
+        </SocialIcon>
+      </Grid>
+      <Grid item>
+        <SocialIcon href='' target='blank'>
+          <img src={twitter} height={22} />
+        </SocialIcon>
+      </Grid>
+      <Grid item>
+        <SocialIcon href='https://www.instagram.com/bwindia_/' target='blank'>
+          <img src={instagram} height={22} />
+        </SocialIcon>
+      </Grid>
+    </Grid>
+  )
+}
+
 const Footer = () => {
   const navigate = useNavigate()
   return (
@@ -222,29 +247,7 @@ const Footer = () => {
               </WhiteTypography>
             </Grid>
             <Grid item>
-              <Grid container columnGap={5}>
-                <Grid item>
-                  <SocialIcon
-                    href='https://www.facebook.com/BloodWarriors'
-                    target='blank'
-                  >
-                    <img src={facebook} height={22} />
-                  </SocialIcon>
-                </Grid>
-                <Grid item>
-                  <SocialIcon href='' target='blank'>
-                    <img src={twitter} height={22} />
-                  </SocialIcon>
-                </Grid>
-                <Grid item>
-                  <SocialIcon
-                    href='https://www.instagram.com/bwindia_/'
-                    target='blank'
-                  >
-                    <img src={instagram} height={22} />
-                  </SocialIcon>
-                </Grid>
-              </Grid>
+              <SocialGroup />
             </Grid>
           </Grid>
         </Grid>

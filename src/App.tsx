@@ -7,14 +7,18 @@ import {
   ABOUT_US_PAGE_ROUTE,
   AWARENESS_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
+  CONTACT_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
-  PRIVACY_POLICY_PAGE_ROUTE
+  PRIVACY_POLICY_PAGE_ROUTE,
+  TERMS_CONDITIONS_PAGE_ROUTE
 } from './utils/urls'
 import AboutUsPage from './pages/AboutUsPage'
 import BlogPage from './pages/BlogPage'
 import DonationPage from './pages/DonationPage'
-import PolicyPage from './pages/PolicyPage'
+import PolicyPage from './pages/PrivacyPolicyPage'
+import ContactUsPage from './pages/ContactUsPage'
+import TermsConditionsPage from './pages/TermsConditionsPage'
 
 const App = () => {
   return (
@@ -28,6 +32,8 @@ const App = () => {
           <Route path={BLOG_PAGE_ROUTE} element={<BlogPage />} />
           <Route path={DONATION_PAGE_ROUTE} element={<DonationPage />} />
           <Route path={PRIVACY_POLICY_PAGE_ROUTE} element={<PolicyPage />} />
+          <Route path={TERMS_CONDITIONS_PAGE_ROUTE} element={<TermsConditionsPage />} />
+          <Route path={CONTACT_PAGE_ROUTE} element={<ContactUsPage />} />
         </Route>
       </Routes>
     </>

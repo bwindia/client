@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
-  devtool: 'inline-source-map',
   target: 'web',
   module: {
     rules: [
@@ -45,14 +44,18 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..', './dist'),
-    publicPath: '/'
+    path: path.resolve(__dirname, '..', './public_html')
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'blood-warriors',
-      filename: 'index.html',
       template: path.resolve(__dirname, '..', './src/index.html')
     })
-  ]
+  ],
+  stats: 'errors-only',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  }
 }

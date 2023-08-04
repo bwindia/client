@@ -51,7 +51,8 @@ import {
   CONTACT_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
-  PRIVACY_POLICY_PAGE_ROUTE
+  PRIVACY_POLICY_PAGE_ROUTE,
+  TERMS_CONDITIONS_PAGE_ROUTE
 } from './urls'
 import thalassemia1 from 'src/assets/illustrations/thalassemia-1.svg'
 import thalassemia2 from 'src/assets/illustrations/thalassemia-2.svg'
@@ -97,7 +98,7 @@ export const FOOTER_LABELS = [
   },
   {
     label: TERMS_CONDITIONS,
-    path: PRIVACY_POLICY_PAGE_ROUTE
+    path: TERMS_CONDITIONS_PAGE_ROUTE
   },
   {
     label: CONTACT_US,

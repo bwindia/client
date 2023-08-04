@@ -14,7 +14,8 @@ interface Props {
 const RelativeBox = styled(Box)(
   (props: { items: number; width?: number | string }) => ({
     overflow: 'hidden',
-    width: `calc((333px + 44px) * ${props.items} - 44px)`,
+    width: 'calc(100vw - 16vw - 90px)',
+    maxWidth: `calc((333px + 44px) * ${props.items} - 44px)`,
     padding: '22px'
   })
 )
@@ -46,16 +47,13 @@ const TestimonialGroup = (props: Props) => {
   }
 
   const handleItemsOnResize = (width: number) => {
-    console.log('width', width)
     if (width < theme.breakpoints.values.md) {
-      console.log(items)
       setItems(1)
     } else if (width < theme.breakpoints.values.lg) {
       setItems(2)
     } else {
       setItems(3)
     }
-    // console.log(items)
   }
 
   useEffect(() => {

@@ -2,7 +2,6 @@ import { Grid, Pagination, styled } from '@mui/material'
 import React, { useState } from 'react'
 import Typography from 'src/components/atoms/Typography'
 import TeamCard from 'src/components/molecules/TeamCard'
-import theme from 'src/themes'
 import { OUR_TEAM } from 'src/utils/constants'
 import { TEAM_MEMBERS } from './team'
 
@@ -20,25 +19,10 @@ const TeamSection = () => {
     TEAM_MEMBERS.slice(0, 12)
   )
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    console.log(getItemsByScreenWidth())
-    console.log(allMembers.length)
     setPage(value)
     setPaginatedMembers(
       allMembers.slice((value - 1) * 12, (value - 1) * 12 + 12)
     )
-  }
-
-  const getItemsByScreenWidth = () => {
-    console.log('width', screen.width)
-    if (window.screenX > theme.breakpoints.values.xl) {
-      return 3
-    } else if (
-      window.screenX < theme.breakpoints.values.xl &&
-      window.screenX > theme.breakpoints.values.md
-    ) {
-      return 2
-    }
-    return 1
   }
 
   return (

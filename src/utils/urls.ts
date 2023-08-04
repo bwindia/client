@@ -12,5 +12,6 @@ export const REGISTER_PAGE_ROUTE = '/register'
 export const DONATION_PAGE_ROUTE = '/donate'
 export const SIGNIN_PAGE_ROUTE = '/signup'
 export const BLOG_PATH = (id: string) => `/awareness/blog/${id}`
-export const PRIVACY_POLICY_PAGE_ROUTE = '/privacy'
+export const PRIVACY_POLICY_PAGE_ROUTE = '/privacy-policy'
+export const TERMS_CONDITIONS_PAGE_ROUTE = '/terms-and-conditions'
 export const CONTACT_PAGE_ROUTE = '/contact-us'

@@ -101,28 +101,50 @@ theme = createTheme(theme, {
     h5: {
       fontStyle: 'regular',
       fontSize: '20px',
-      lineHeight: '30px'
+      lineHeight: '30px',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '12px',
+        lineHeight: '18px'
+      }
     },
     caption1: {
       fontStyle: 'regular',
       fontSize: '16px',
-      lineHeight: '27px'
+      lineHeight: '27px',
+      letterSpacing: '0.8px'
     },
     body1: {
       fontStyle: 'regular',
       fontSize: '16px',
-      lineHeight: '27px'
+      lineHeight: '27px',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '12px',
+        lineHeight: '20px',
+        letterSpacing: '0.6px'
+      }
     },
     body2: {
       fontStyle: 'regular',
       fontSize: '12px',
-      lineHeight: '20px'
+      lineHeight: '20px',
+      letterSpacing: '0.24px',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '10px',
+        lineHeight: '17px',
+        letterSpacing: '0.2px'
+      }
     },
 
     body3: {
       fontStyle: 'regular',
       fontSize: '12px',
-      lineHeight: '20px'
+      lineHeight: '20px',
+      letterSpacing: '0.24px',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '10px',
+        lineHeight: '17px',
+        letterSpacing: '0.2px'
+      }
     },
     link_text: {
       fontStyle: 'regular',

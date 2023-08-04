@@ -5,6 +5,7 @@ import Typography from 'src/components/atoms/Typography'
 import { NAVBAR_ITEMS, REGISTER_NOW } from 'src/utils/constants'
 import theme from 'src/themes'
 import logo from 'src/assets/logos/BW Long Logo.png'
+import smLogo from 'src/assets/logos/Blood Warriors Logo Icon.png'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { NavbarItem } from 'src/utils/types'
 import menuIcon from 'src/assets/icons/menu.svg'
@@ -13,9 +14,8 @@ import { HOME_PAGE_ROUTE } from 'src/utils/urls'
 import { getRouteParent } from 'src/utils/functions'
 
 const NavBox = styled(Box)({
-  //   width: "100%",
   background: theme.palette.structural.white,
-  padding: '0 8vw',
+  padding: '1.4rem 8vw',
   position: 'sticky',
   top: 0,
   zIndex: 100
@@ -40,7 +40,8 @@ const MobileMenuItems = styled(Menu)(() => ({
 }))
 
 const Logo = styled('img')({
-  cursor: 'pointer'
+  cursor: 'pointer',
+  height: '3.2rem'
 })
 
 const Navbar = () => {
@@ -240,14 +241,22 @@ const Navbar = () => {
       <NavBox>
         <Grid container justifyContent='space-between' alignItems='center'>
           <Grid item>
-            <Logo
-              src={logo}
-              width={100}
-              height={100}
-              onClick={() => {
-                navigateToRoute(HOME_PAGE_ROUTE)
-              }}
-            />
+            {window.innerWidth < theme.breakpoints.values.sm && (
+              <Logo
+                src={smLogo}
+                onClick={() => {
+                  navigateToRoute(HOME_PAGE_ROUTE)
+                }}
+              />
+            )}
+            {window.innerWidth >= theme.breakpoints.values.sm && (
+              <Logo
+                src={logo}
+                onClick={() => {
+                  navigateToRoute(HOME_PAGE_ROUTE)
+                }}
+              />
+            )}
           </Grid>
           <Grid item>
             <Grid container display={{ xs: 'flex', lg: 'none' }}>
