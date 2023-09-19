@@ -48,10 +48,12 @@ import journey7 from 'src/assets/images/journey/journey7.png'
 import {
   ABOUT_US_PAGE_ROUTE,
   AWARENESS_PAGE_ROUTE,
+  CANCELLATION_POLICY_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
   PRIVACY_POLICY_PAGE_ROUTE,
+  REFUND_POLICY_PAGE_ROUTE,
   TERMS_CONDITIONS_PAGE_ROUTE
 } from './urls'
 import thalassemia1 from 'src/assets/illustrations/thalassemia-1.svg'
@@ -78,6 +80,8 @@ export const VOLUNTEER = 'Volunteer'
 export const CONTACT_OUR_TEAM = 'Contact to our team'
 export const PRIVACY_POLICY = 'Privacy Policy'
 export const TERMS_CONDITIONS = 'Terms and Conditions'
+export const REFUND_POLICY = 'Refund Policy'
+export const CANCELLATION_POLICY = 'Cancellation Policy'
 export const CONTACT_US = 'Contact us'
 export const FOOTER_LABELS = [
   {
@@ -103,6 +107,14 @@ export const FOOTER_LABELS = [
   {
     label: CONTACT_US,
     path: CONTACT_PAGE_ROUTE
+  },
+  {
+    label: REFUND_POLICY,
+    path: REFUND_POLICY_PAGE_ROUTE
+  },
+  {
+    label: CANCELLATION_POLICY,
+    path: CANCELLATION_POLICY_PAGE_ROUTE
   }
 ]
 
@@ -291,7 +303,7 @@ export const SEARCH_PLACEHOLDER = 'Search blogs, articles'
 export const YOU_NEEDNOT_BE_DOCTOR = 'You need not be a doctor to save life!'
 export const DONATION_VIDEO_TITLE = 'Why is Blood Donation a Problem?'
 export const DONATION_VIDEO_CONTENT =
-  'Id eget etiam pulvinar dolor. Vivamus lacus sociis eu mi eu in mi. Porttitor sapien tortor feugiat elementum donec. Sed eu cursus nec libero gravida sapien. Proin tempor ornare vitae rutrum proin aliquet. Tortor viverra a scelerisque tortor ornare. Lacus ullamcorper purus diam sit amet diam dui vestibulum. In tincidunt eget porttitor gravida tellus in ipsum placerat. Nunc lorem risus consectetur auctor ut sagittis quam neque cursus. '
+  'Blood donation is a crucial and life-saving activity that helps to ensure that there is a sufficient supply of blood available for those who need it. Unfortunately, there are often shortages of blood, particularly in developing countries, which can have serious consequences for patients who require blood transfusions. In this article, we will explore the importance of blood donation, the problems that exist in the general public, and the benefits of donating blood.  '
 export const BLOGS_HEADING = 'From Our Blogs'
 export const FAQS_HEADING = 'Frequently Asked Questions (FAQs)'
 export const RELATED_BLOGS = 'Related blogs'

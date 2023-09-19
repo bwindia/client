@@ -15,3 +15,5 @@ export const BLOG_PATH = (id: string) => `/awareness/blog/${id}`
 export const PRIVACY_POLICY_PAGE_ROUTE = '/privacy-policy'
 export const TERMS_CONDITIONS_PAGE_ROUTE = '/terms-and-conditions'
 export const CONTACT_PAGE_ROUTE = '/contact-us'
+export const REFUND_POLICY_PAGE_ROUTE = '/refund-policy'
+export const CANCELLATION_POLICY_PAGE_ROUTE = '/cancellation-policy'

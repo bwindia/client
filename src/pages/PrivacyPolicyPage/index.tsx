@@ -3,7 +3,7 @@ import React from 'react'
 import Typography from 'src/components/atoms/Typography'
 import theme from 'src/themes'
 
-const Container = styled(Grid)({
+export const Container = styled(Grid)({
   width: 'calc(100% - 2rem)',
   maxWidth: '48rem',
   margin: '2rem auto 4rem',
