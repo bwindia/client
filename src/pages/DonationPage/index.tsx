@@ -1,8 +1,7 @@
 import { Box, Grid, styled } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Typography from 'src/components/atoms/Typography'
 import illustration from 'src/assets/illustrations/contribute.svg'
-import Button from 'src/components/atoms/Button'
 import theme from 'src/themes'
 
 const Divider = styled('div')({
@@ -12,6 +11,17 @@ const Divider = styled('div')({
 })
 
 const DonationPage = () => {
+  useEffect(() => {
+    const rzpPaymentForm = document.getElementById('rzp_payment_form')
+    if (rzpPaymentForm !== null && !rzpPaymentForm.hasChildNodes()) {
+      const script = document.createElement('script')
+      script.src = 'https://checkout.razorpay.com/v1/payment-button.js'
+      script.async = true
+      script.dataset.payment_button_id = 'pl_NEvNOxgmZVJLmg'
+      rzpPaymentForm.appendChild(script)
+    }
+  }, [])
+
   return (
     <Box p='8vw'>
       <Grid container columnSpacing={16}>
@@ -118,12 +128,11 @@ const DonationPage = () => {
               </Grid>
             </Grid>
             <Grid item>
-              <a
-                href='https://milaap.org/fundraisers/support-poor-patients-29'
-                target='blank'
-              >
-                <Button variant='contained'>Contribute Now</Button>
-              </a>
+              <Grid container columnGap={1} alignItems='center'>
+                <Grid item>
+                  <form id='rzp_payment_form'></form>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
