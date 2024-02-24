@@ -57,7 +57,7 @@ export const Image = styled(Grid)(({ theme }) => ({
 }))
 
 const HomePage = () => {
-  return (
+    return (
     <>
       <Section id='hero'>
         <Grid container alignItems='center' rowGap={3} columnSpacing={'8vw'}>
@@ -76,7 +76,7 @@ const HomePage = () => {
               </Grid>
               <Grid item>
                 <a
-                  href='https://api.whatsapp.com/send/?phone=%2B918688468702&text=hello&type=phone_number&app_absent=0'
+                  href='https://bit.ly/bloodbridge'
                   target='blank'
                 >
                   <Button variant='contained' size='large'>
