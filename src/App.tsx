@@ -1,8 +1,5 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
+import React, { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import AwarenessPage from './pages/AwarnessPage'
-import NavTemplate from './components/templates/NavTemplate'
 import {
   ABOUT_US_PAGE_ROUTE,
   AWARENESS_PAGE_ROUTE,
@@ -15,42 +12,52 @@ import {
   REFUND_POLICY_PAGE_ROUTE,
   TERMS_CONDITIONS_PAGE_ROUTE
 } from './utils/urls'
-import AboutUsPage from './pages/AboutUsPage'
-import BlogPage from './pages/BlogPage'
-import DonationPage from './pages/DonationPage'
-import PolicyPage from './pages/PrivacyPolicyPage'
-import ContactUsPage from './pages/ContactUsPage'
-import TermsConditionsPage from './pages/TermsConditionsPage'
-import RefundPolicyPage from './pages/PolicyPages/RefundPolicyPage'
-import CancellationPolicyPage from './pages/PolicyPages/CancelPolicyPage'
+import PageLoader from './components/templates/PageLoader'
+const NavTemplate = lazy(() => import('./components/templates/NavTemplate'))
+const HomePage = lazy(() => import('./pages/HomePage'))
+const AwarenessPage = lazy(() => import('./pages/AwarnessPage'))
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'))
+const BlogPage = lazy(() => import('./pages/BlogPage'))
+const DonationPage = lazy(() => import('./pages/DonationPage'))
+const PolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
+const ContactUsPage = lazy(() => import('./pages/ContactUsPage'))
+const TermsConditionsPage = lazy(() => import('./pages/TermsConditionsPage'))
+const RefundPolicyPage = lazy(
+  () => import('./pages/PolicyPages/RefundPolicyPage')
+)
+const CancellationPolicyPage = lazy(
+  () => import('./pages/PolicyPages/CancelPolicyPage')
+)
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<NavTemplate />}>
-          <Route index element={<HomePage />} />
-          <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
-          <Route path={ABOUT_US_PAGE_ROUTE} element={<AboutUsPage />} />
-          <Route path={AWARENESS_PAGE_ROUTE} element={<AwarenessPage />} />
-          <Route path={BLOG_PAGE_ROUTE} element={<BlogPage />} />
-          <Route path={DONATION_PAGE_ROUTE} element={<DonationPage />} />
-          <Route path={PRIVACY_POLICY_PAGE_ROUTE} element={<PolicyPage />} />
-          <Route
-            path={TERMS_CONDITIONS_PAGE_ROUTE}
-            element={<TermsConditionsPage />}
-          />
-          <Route path={CONTACT_PAGE_ROUTE} element={<ContactUsPage />} />
-          <Route
-            path={REFUND_POLICY_PAGE_ROUTE}
-            element={<RefundPolicyPage />}
-          />
-          <Route
-            path={CANCELLATION_POLICY_PAGE_ROUTE}
-            element={<CancellationPolicyPage />}
-          />
-        </Route>
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path='/' element={<NavTemplate />}>
+            <Route index element={<HomePage />} />
+            <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
+            <Route path={ABOUT_US_PAGE_ROUTE} element={<AboutUsPage />} />
+            <Route path={AWARENESS_PAGE_ROUTE} element={<AwarenessPage />} />
+            <Route path={BLOG_PAGE_ROUTE} element={<BlogPage />} />
+            <Route path={DONATION_PAGE_ROUTE} element={<DonationPage />} />
+            <Route path={PRIVACY_POLICY_PAGE_ROUTE} element={<PolicyPage />} />
+            <Route
+              path={TERMS_CONDITIONS_PAGE_ROUTE}
+              element={<TermsConditionsPage />}
+            />
+            <Route path={CONTACT_PAGE_ROUTE} element={<ContactUsPage />} />
+            <Route
+              path={REFUND_POLICY_PAGE_ROUTE}
+              element={<RefundPolicyPage />}
+            />
+            <Route
+              path={CANCELLATION_POLICY_PAGE_ROUTE}
+              element={<CancellationPolicyPage />}
+            />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   )
 }
