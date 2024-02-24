@@ -1,12 +1,55 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
 import { Route, Routes } from 'react-router-dom'
+import AwarenessPage from './pages/AwarnessPage'
+import NavTemplate from './components/templates/NavTemplate'
+import {
+  ABOUT_US_PAGE_ROUTE,
+  AWARENESS_PAGE_ROUTE,
+  BLOG_PAGE_ROUTE,
+  CANCELLATION_POLICY_PAGE_ROUTE,
+  CONTACT_PAGE_ROUTE,
+  DONATION_PAGE_ROUTE,
+  HOME_PAGE_ROUTE,
+  PRIVACY_POLICY_PAGE_ROUTE,
+  REFUND_POLICY_PAGE_ROUTE,
+  TERMS_CONDITIONS_PAGE_ROUTE
+} from './utils/urls'
+import AboutUsPage from './pages/AboutUsPage'
+import BlogPage from './pages/BlogPage'
+import DonationPage from './pages/DonationPage'
+import PolicyPage from './pages/PrivacyPolicyPage'
+import ContactUsPage from './pages/ContactUsPage'
+import TermsConditionsPage from './pages/TermsConditionsPage'
+import RefundPolicyPage from './pages/PolicyPages/RefundPolicyPage'
+import CancellationPolicyPage from './pages/PolicyPages/CancelPolicyPage'
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<NavTemplate />}>
+          <Route index element={<HomePage />} />
+          <Route path={HOME_PAGE_ROUTE} element={<HomePage />} />
+          <Route path={ABOUT_US_PAGE_ROUTE} element={<AboutUsPage />} />
+          <Route path={AWARENESS_PAGE_ROUTE} element={<AwarenessPage />} />
+          <Route path={BLOG_PAGE_ROUTE} element={<BlogPage />} />
+          <Route path={DONATION_PAGE_ROUTE} element={<DonationPage />} />
+          <Route path={PRIVACY_POLICY_PAGE_ROUTE} element={<PolicyPage />} />
+          <Route
+            path={TERMS_CONDITIONS_PAGE_ROUTE}
+            element={<TermsConditionsPage />}
+          />
+          <Route path={CONTACT_PAGE_ROUTE} element={<ContactUsPage />} />
+          <Route
+            path={REFUND_POLICY_PAGE_ROUTE}
+            element={<RefundPolicyPage />}
+          />
+          <Route
+            path={CANCELLATION_POLICY_PAGE_ROUTE}
+            element={<CancellationPolicyPage />}
+          />
+        </Route>
       </Routes>
     </>
   )

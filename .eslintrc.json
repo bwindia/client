@@ -33,6 +33,7 @@
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/indent": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
     "multiline-ternary": "off"
   }
 }
