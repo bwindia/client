@@ -35,10 +35,10 @@ const TeamCard = (props: Props) => {
       <Grid item>
         <Grid container direction='column' alignItems='center'>
           <Grid item>
-            <Typography variant='h4'>{props.data.name}</Typography>
+            <Typography variant='h4' textAlign='center'>{props.data.name}</Typography>
           </Grid>
           <Grid item>
-            <Typography variant='h5' color={theme.palette.text.secondary}>
+            <Typography variant='h5' textAlign='center' color={theme.palette.text.secondary}>
               {props.data.role}
             </Typography>
           </Grid>
