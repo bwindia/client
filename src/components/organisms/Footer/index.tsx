@@ -2,14 +2,13 @@ import { Grid, InputAdornment, TextField, styled, Divider } from '@mui/material'
 import React from 'react'
 import Typography from 'src/components/atoms/Typography'
 import theme from 'src/themes'
-import { CONTACT_OUR_TEAM, FOOTER_LABELS } from 'src/utils/constants'
-import logo from 'src/assets/logo.svg'
-import rightArrow from 'src/assets/icons/pink-arrow-right.svg'
+import { FOOTER_LABELS } from 'src/utils/constants'
 import facebook from 'src/assets/icons/facebook.svg'
 import twitter from 'src/assets/icons/twitter.svg'
 import instagram from 'src/assets/icons/instagram.svg'
-import Avatar from 'src/components/atoms/Avatar'
 import { useNavigate } from 'react-router-dom'
+import annualReport23 from 'src/assets/pdfs/BW Annual Report 2024.pdf'
+import financialStatement22 from 'src/assets/pdfs/FS_Blood Warriors_FY 22-23.pdf'
 
 const FooterGrid = styled(Grid)({
   background: theme.palette.primary.main,
@@ -65,6 +64,10 @@ const SocialIcon = styled('a')({
   // width: '44px',
   // height: '44px',
   cursor: 'pointer'
+})
+
+const FooterLink = styled('a')({
+  textDecoration: 'none'
 })
 
 export const SocialGroup = () => {
@@ -226,6 +229,26 @@ const Footer = () => {
                     )}
                   </>
                 ))}
+                <Grid item>
+                  <WhiteTypography variant='h5'>|</WhiteTypography>
+                </Grid>
+                <FooterItem item>
+                  <FooterLink href={annualReport23}>
+                    <WhiteTypography variant='h5' fontWeight={1000}>
+                      Annual Report 2023-24
+                    </WhiteTypography>
+                  </FooterLink>
+                </FooterItem>
+                <Grid item>
+                  <WhiteTypography variant='h5'>|</WhiteTypography>
+                </Grid>
+                <FooterItem item>
+                  <FooterLink href={financialStatement22}>
+                    <WhiteTypography variant='h5' fontWeight={1000}>
+                      Financial Statements 2022-23
+                    </WhiteTypography>
+                  </FooterLink>
+                </FooterItem>
               </Grid>
             </Grid>
           </Grid>
