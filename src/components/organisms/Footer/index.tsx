@@ -205,7 +205,7 @@ const Footer = () => {
                 columnGap={2}
                 justifyContent={{ xs: 'center', md: 'end' }}
               >
-                {FOOTER_LABELS.map((item, index) => (
+                {FOOTER_LABELS.map((item) => (
                   <>
                     <FooterItem
                       item
@@ -222,16 +222,11 @@ const Footer = () => {
                         {item.label}
                       </WhiteTypography>
                     </FooterItem>
-                    {index !== FOOTER_LABELS.length - 1 && (
-                      <Grid item>
-                        <WhiteTypography variant='h5'>|</WhiteTypography>
-                      </Grid>
-                    )}
+                    <Grid item>
+                      <WhiteTypography variant='h5'>|</WhiteTypography>
+                    </Grid>
                   </>
                 ))}
-                <Grid item>
-                  <WhiteTypography variant='h5'>|</WhiteTypography>
-                </Grid>
                 <FooterItem item>
                   <FooterLink href={annualReport23}>
                     <WhiteTypography variant='h5' fontWeight={1000}>

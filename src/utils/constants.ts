@@ -50,6 +50,7 @@ import {
   AWARENESS_PAGE_ROUTE,
   CANCELLATION_POLICY_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
+  DASHBOARD_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
   PRIVACY_POLICY_PAGE_ROUTE,
@@ -81,6 +82,7 @@ export const CONTACT_OUR_TEAM = 'Contact to our team'
 export const PRIVACY_POLICY = 'Privacy Policy'
 export const TERMS_CONDITIONS = 'Terms and Conditions'
 export const REFUND_POLICY = 'Refund Policy'
+export const DASHBOARD = 'Dashboard'
 export const CANCELLATION_POLICY = 'Cancellation Policy'
 export const CONTACT_US = 'Contact us'
 export const FOOTER_LABELS = [
@@ -107,6 +109,10 @@ export const FOOTER_LABELS = [
   {
     label: CONTACT_US,
     path: CONTACT_PAGE_ROUTE
+  },
+  {
+    label: DASHBOARD,
+    path: DASHBOARD_PAGE_ROUTE
   },
   {
     label: REFUND_POLICY,

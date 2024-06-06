@@ -6,6 +6,7 @@ import {
   BLOG_PAGE_ROUTE,
   CANCELLATION_POLICY_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
+  DASHBOARD_PAGE_ROUTE,
   DONATION_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
   PRIVACY_POLICY_PAGE_ROUTE,
@@ -21,6 +22,7 @@ const BlogPage = lazy(() => import('./pages/BlogPage'))
 const DonationPage = lazy(() => import('./pages/DonationPage'))
 const PolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'))
 const ContactUsPage = lazy(() => import('./pages/ContactUsPage'))
+const DashboardPage = lazy(() => import('./pages/DashboardPage'))
 const TermsConditionsPage = lazy(() => import('./pages/TermsConditionsPage'))
 const RefundPolicyPage = lazy(
   () => import('./pages/PolicyPages/RefundPolicyPage')
@@ -55,6 +57,7 @@ const App = () => {
               path={CANCELLATION_POLICY_PAGE_ROUTE}
               element={<CancellationPolicyPage />}
             />
+            <Route path={DASHBOARD_PAGE_ROUTE} element={<DashboardPage />} />
           </Route>
         </Routes>
       </Suspense>
