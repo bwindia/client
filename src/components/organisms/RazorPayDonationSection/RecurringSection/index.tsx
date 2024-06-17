@@ -10,7 +10,7 @@ const RecurringSection = () => {
         script.src =
           'https://cdn.razorpay.com/static/widget/subscription-button.js'
         script.async = true
-        script.dataset.subscription_button_id = 'pl_OH8gtGKpyWLire'
+        script.dataset.subscription_button_id = 'pl_OHnhuLPjAQisxK'
         script.dataset.button_theme = 'brand-color'
         rzpSubscribeForm.appendChild(script)
       }
