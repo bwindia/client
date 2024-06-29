@@ -5,6 +5,7 @@ import {
   DonationReuqestPatientDetails,
   Heading,
   IArticle,
+  IChipInputData,
   IJourney,
   IProgram,
   NavbarItem,
@@ -543,3 +544,9 @@ export const JOURNEY: IJourney[] = [
     image: journey7
   }
 ]
+
+export const INPUT_CHIP_DATA: IChipInputData = {
+  active: undefined,
+  data: [{ label: 'Blogs' }, { label: 'Faqs' }]
+}
+

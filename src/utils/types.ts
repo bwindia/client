@@ -80,3 +80,10 @@ export interface ITeamMember {
   name: string
   role: string
 }
+
+export interface IChipInputData {
+  active: 'Blogs' | 'Faqs' | undefined
+  data: Array<{
+    label: 'Blogs' | 'Faqs'
+  }>
+}
