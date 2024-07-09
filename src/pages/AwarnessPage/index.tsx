@@ -21,6 +21,7 @@ import { IArticle, IChipInputData } from 'src/utils/types'
 import FaqsGroup from 'src/components/organisms/Faqs'
 import { ARTICLES } from '../BlogPage/blogs'
 import awarenessVideo from 'src/assets/videos/why-Blood-Donation.mp4'
+import SEO from 'src/components/templates/SEO'
 
 const SearchBackdrop = styled(Grid)(({ theme }) => ({
   background: `${theme.palette.primary.main}`,
@@ -95,7 +96,6 @@ const AwarenessPage = () => {
   }
 
   const handleInputChips = (label: any, event?: any) => {
-    console.log(event ? 'a' : 'b')
     let temp = label
     if (event) {
       temp = label === 'Blogs' ? 'Faqs' : 'Blogs'
@@ -105,6 +105,11 @@ const AwarenessPage = () => {
 
   return (
     <>
+      <SEO
+        title='Awarness | Blood Warriors | Latest News and Updates on Thalassemia and Blood Donations'
+        description='Explore our blog for the latest news, research, and updates on thalassemia. Stay informed with [NGO Name].'
+        keywords='Thalassemia faqs, Thalassemia awareness, Thalassemia blog, Thalassemia news, Thalassemia updates, Thalassemia research, Thalassemia articles, Blood Warriors blog'
+      />
       <Box px={{ xs: 0, md: '8vw' }}>
         <SearchBackdrop
           container

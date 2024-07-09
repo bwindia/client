@@ -9,6 +9,7 @@ import { RELATED_BLOGS } from 'src/utils/constants'
 import { IArticle } from 'src/utils/types'
 import { AWARENESS_PAGE_ROUTE, BLOG_PATH } from 'src/utils/urls'
 import { ARTICLES } from './blogs'
+import SEO from 'src/components/templates/SEO'
 
 const Content = styled(Grid)({
   'div > *, *': {
@@ -120,106 +121,109 @@ const BlogPage = () => {
   }
 
   return (
-    <Box px='8vw' py='4vw'>
-      <Grid container columnSpacing={7}>
-        <Grid item xs={12} md={7}>
-          <Grid container direction='column' rowGap={6}>
-            <Grid item>
-              <Typography variant='h1'>{blog.title}</Typography>
-            </Grid>
-            <Grid item>
-              <Grid container columnGap={2} alignItems='center'>
-                <Grid item>
-                  <Avatar
-                    variant='circular'
-                    width='4.5rem'
-                    height='4.5rem'
-                    src={blog.user.profilePicture}
-                  />
-                </Grid>
-                <Grid item>
-                  <Grid container direction='column'>
-                    <Grid item>
-                      <Typography variant='h5'>{blog.user.name}</Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography color={theme.palette.text.secondary}>
-                        {blog.createdAt}
-                      </Typography>
+    <>
+      <SEO title={`${blog.title} | Blood Warriors`} />
+      <Box px='8vw' py='4vw'>
+        <Grid container columnSpacing={7}>
+          <Grid item xs={12} md={7}>
+            <Grid container direction='column' rowGap={6}>
+              <Grid item>
+                <Typography variant='h1'>{blog.title}</Typography>
+              </Grid>
+              <Grid item>
+                <Grid container columnGap={2} alignItems='center'>
+                  <Grid item>
+                    <Avatar
+                      variant='circular'
+                      width='4.5rem'
+                      height='4.5rem'
+                      src={blog.user.profilePicture}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Grid container direction='column'>
+                      <Grid item>
+                        <Typography variant='h5'>{blog.user.name}</Typography>
+                      </Grid>
+                      <Grid item>
+                        <Typography color={theme.palette.text.secondary}>
+                          {blog.createdAt}
+                        </Typography>
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
+              <Content item textAlign='justify' pr={2}>
+                <MuiMarkdown>{content}</MuiMarkdown>
+              </Content>
             </Grid>
-            <Content item textAlign='justify' pr={2}>
-              <MuiMarkdown>{content}</MuiMarkdown>
-            </Content>
           </Grid>
-        </Grid>
-        <Grid item md={5} display={{ xs: 'none', md: 'block' }}>
-          <RelatedBlogs container direction='column'>
-            <RelatedBlogsTitle item>
-              <Typography color={theme.palette.structural.white}>
-                {RELATED_BLOGS}
-              </Typography>
-            </RelatedBlogsTitle>
-            <Grid item px={4} py={3}>
-              <Grid container direction='column' rowGap={5}>
-                {relatedBlogs.map((item, index) => (
-                  <Grid item key={`related-blog-${index}`}>
-                    <RelativeBox>
-                      <Image src={item.image} />
-                      <AbsoluteBox>
-                        <Grid
-                          container
-                          direction='column'
-                          justifyContent='end'
-                          height='100%'
-                          rowGap={2}
-                          p={2}
-                        >
-                          <Grid item>
-                            <Typography
-                              variant='h3'
-                              color={theme.palette.structural.white}
-                            >
-                              {item.title}
-                            </Typography>
-                          </Grid>
-                          <Grid item>
-                            <Grid container justifyContent='space-between'>
-                              <PointerGrid
-                                item
-                                onClick={() => {
-                                  handleArticleClick(item.id)
-                                }}
+          <Grid item md={5} display={{ xs: 'none', md: 'block' }}>
+            <RelatedBlogs container direction='column'>
+              <RelatedBlogsTitle item>
+                <Typography color={theme.palette.structural.white}>
+                  {RELATED_BLOGS}
+                </Typography>
+              </RelatedBlogsTitle>
+              <Grid item px={4} py={3}>
+                <Grid container direction='column' rowGap={5}>
+                  {relatedBlogs.map((item, index) => (
+                    <Grid item key={`related-blog-${index}`}>
+                      <RelativeBox>
+                        <Image src={item.image} />
+                        <AbsoluteBox>
+                          <Grid
+                            container
+                            direction='column'
+                            justifyContent='end'
+                            height='100%'
+                            rowGap={2}
+                            p={2}
+                          >
+                            <Grid item>
+                              <Typography
+                                variant='h3'
+                                color={theme.palette.structural.white}
                               >
-                                <Typography
-                                  color={theme.palette.structural.white}
+                                {item.title}
+                              </Typography>
+                            </Grid>
+                            <Grid item>
+                              <Grid container justifyContent='space-between'>
+                                <PointerGrid
+                                  item
+                                  onClick={() => {
+                                    handleArticleClick(item.id)
+                                  }}
                                 >
-                                  {'Read more'}
-                                </Typography>
-                              </PointerGrid>
-                              <Grid item>
-                                <Typography
-                                  color={theme.palette.structural.white}
-                                >
-                                  {item.createdAt}
-                                </Typography>
+                                  <Typography
+                                    color={theme.palette.structural.white}
+                                  >
+                                    {'Read more'}
+                                  </Typography>
+                                </PointerGrid>
+                                <Grid item>
+                                  <Typography
+                                    color={theme.palette.structural.white}
+                                  >
+                                    {item.createdAt}
+                                  </Typography>
+                                </Grid>
                               </Grid>
                             </Grid>
                           </Grid>
-                        </Grid>
-                      </AbsoluteBox>
-                    </RelativeBox>
-                  </Grid>
-                ))}
+                        </AbsoluteBox>
+                      </RelativeBox>
+                    </Grid>
+                  ))}
+                </Grid>
               </Grid>
-            </Grid>
-          </RelatedBlogs>
+            </RelatedBlogs>
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </>
   )
 }
 

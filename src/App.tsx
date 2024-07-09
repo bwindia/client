@@ -14,6 +14,7 @@ import {
   TERMS_CONDITIONS_PAGE_ROUTE
 } from './utils/urls'
 import PageLoader from './components/templates/PageLoader'
+import SEO from './components/templates/SEO'
 const NavTemplate = lazy(() => import('./components/templates/NavTemplate'))
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AwarenessPage = lazy(() => import('./pages/AwarnessPage'))
@@ -34,6 +35,7 @@ const CancellationPolicyPage = lazy(
 const App = () => {
   return (
     <>
+      <SEO title='Blood Warriors: Empowering Thalassemia Aware Communities'/>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path='/' element={<NavTemplate />}>

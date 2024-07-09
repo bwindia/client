@@ -1,6 +1,7 @@
 import React from 'react'
 import { Section } from '../HomePage'
 import { styled } from '@mui/material'
+import SEO from 'src/components/templates/SEO'
 
 const IFrame = styled('iframe')(({ theme }) => ({
   width: '100%',
@@ -12,14 +13,17 @@ const IFrame = styled('iframe')(({ theme }) => ({
 
 const DashboardPage = () => {
   return (
-    <Section>
-      <IFrame
-        title='Blood Warriors Progress Dashboard v1'
-        src='https://app.powerbi.com/view?r=eyJrIjoiYmFiMzViZDctZjkwMS00ZjZlLTk3ZDItOTBmNjliZjhjNTIwIiwidCI6IjRkNjY1ZGI0LWJlNDctNDZlYi05ODZkLTdhNjI5MTA2NWZkYyJ9'
-        frameBorder='0'
-        allowFullScreen={true}
-      ></IFrame>
-    </Section>
+    <>
+      <SEO title='Dashboard | Blood Warriors' />
+      <Section>
+        <IFrame
+          title='Blood Warriors Progress Dashboard v1'
+          src='https://app.powerbi.com/view?r=eyJrIjoiZTE5Mjg0YzktNTlmMS00ODYzLWEyNDYtMDZmZmFkMjYwOGUzIiwidCI6IjMwNWI1NDdiLWVmNjgtNGUwNS04YzU4LTlhOThmMmMzYWRiOSJ9'
+          frameBorder='0'
+          allowFullScreen={true}
+        ></IFrame>
+      </Section>
+    </>
   )
 }
 

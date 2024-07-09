@@ -52,7 +52,6 @@ const FaqsGroup = (props: Props) => {
       const filteredTopicFaqs = topicItem.data.filter((item: any) =>
         item.question.toLowerCase().includes(props.searchValue.toLowerCase())
       )
-      console.log(filteredTopicFaqs)
       if (filteredTopicFaqs.length) {
         tempFaqs.push({
           topic: topicItem.topic,
