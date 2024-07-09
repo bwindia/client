@@ -17,6 +17,7 @@ import TestimonialGroup from 'src/components/organisms/TestimonialGroup'
 import OurApproach from 'src/components/molecules/OurApproach'
 import VisionValuesSection from 'src/components/molecules/VisionValues'
 import JounreySection from 'src/components/molecules/JourneySection'
+import SEO from 'src/components/templates/SEO'
 
 interface SectionProps {
   px?: string
@@ -57,8 +58,12 @@ export const Image = styled(Grid)(({ theme }) => ({
 }))
 
 const HomePage = () => {
-    return (
+  return (
     <>
+      <SEO
+        title='Blood Warriors: Empowering Thalassemia Aware Communities'
+        keywords='Thalassemia support, Thalassemia care, What is Thalassemia, Thalassemia causes, Thalassemia symptoms, Thalassemia treatment, Understanding Thalassemia'
+      />
       <Section id='hero'>
         <Grid container alignItems='center' rowGap={3} columnSpacing={'8vw'}>
           <Grid item xs={12} md={6}>
@@ -75,10 +80,7 @@ const HomePage = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <a
-                  href='https://bit.ly/bloodbridge'
-                  target='blank'
-                >
+                <a href='https://bit.ly/bloodbridge' target='blank'>
                   <Button variant='contained' size='large'>
                     {GET_BLOOD_NOW}
                   </Button>

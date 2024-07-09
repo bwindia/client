@@ -4,6 +4,7 @@ import bloodDrop from 'src/assets/images/blood-drop-collage.png'
 import Typography from 'src/components/atoms/Typography'
 import ProgramSection from 'src/components/organisms/ProgramSection'
 import TeamSection from 'src/components/organisms/TeamSection'
+import SEO from 'src/components/templates/SEO'
 import theme from 'src/themes'
 import {
   IMPACT,
@@ -25,6 +26,11 @@ const NumberTypography = styled(Typography)({
 const AboutUsPage = () => {
   return (
     <>
+      <SEO
+        title='About Us | Blood Warriors | Support for Thalassemia Patients'
+        description='Learn more about Blood Warriors, our mission, vision, and the team committed to supporting thalassemia patients.'
+        keywords='About Blood Warriors, Thalassemia NGO, Thalassemia mission, Thalassemia vision, Thalassemia support team'
+      />
       <Box px='8vw' pt='2vw' pb={3}>
         <Grid
           container
