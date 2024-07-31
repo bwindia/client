@@ -29,4 +29,4 @@ jobs:
         username: ${{ secrets.CPANEL_FRONTEND_USER }}
         password: ${{ secrets.CPANEL_FRONTEND_PWD }}
         protocol: ${{ secrets.CPANEL_FRONTEND_PROTOCOL }}
-        local-dir: ./public_html/
+        local-dir: ./build/
