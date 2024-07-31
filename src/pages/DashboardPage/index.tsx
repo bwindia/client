@@ -3,7 +3,7 @@ import { Section } from '../HomePage'
 import { styled } from '@mui/material'
 import SEO from 'src/components/templates/SEO'
 
-const IFrame = styled('iframe')(({ theme }) => ({
+export const IFrame = styled('iframe')(({ theme }) => ({
   width: '100%',
   height: '50vw',
   [theme.breakpoints.down('sm')]: {

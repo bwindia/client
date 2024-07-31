@@ -4,6 +4,7 @@ import {
   ABOUT_US_PAGE_ROUTE,
   AWARENESS_PAGE_ROUTE,
   BLOG_PAGE_ROUTE,
+  BMS_PAGE_ROUTE,
   CANCELLATION_POLICY_PAGE_ROUTE,
   CONTACT_PAGE_ROUTE,
   DASHBOARD_PAGE_ROUTE,
@@ -15,6 +16,8 @@ import {
 } from './utils/urls'
 import PageLoader from './components/templates/PageLoader'
 import SEO from './components/templates/SEO'
+import ErrorPage from './pages/ErrorPage'
+import BmsPage from './pages/BmsPage'
 const NavTemplate = lazy(() => import('./components/templates/NavTemplate'))
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AwarenessPage = lazy(() => import('./pages/AwarnessPage'))
@@ -35,7 +38,7 @@ const CancellationPolicyPage = lazy(
 const App = () => {
   return (
     <>
-      <SEO title='Blood Warriors: Empowering Thalassemia Aware Communities'/>
+      <SEO title='Blood Warriors: Empowering Thalassemia Aware Communities' />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path='/' element={<NavTemplate />}>
@@ -60,6 +63,8 @@ const App = () => {
               element={<CancellationPolicyPage />}
             />
             <Route path={DASHBOARD_PAGE_ROUTE} element={<DashboardPage />} />
+            <Route path={BMS_PAGE_ROUTE} element={<BmsPage />} />
+            <Route path='*' element={<ErrorPage />} />
           </Route>
         </Routes>
       </Suspense>
