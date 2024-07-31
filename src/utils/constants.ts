@@ -64,7 +64,7 @@ import thalassemia3 from 'src/assets/illustrations/thalassemia-3.svg'
 
 // Button Labels
 export const SIGN_IN = 'Sign In'
-export const GET_BLOOD_NOW = 'Get Blood Now'
+export const GET_BLOOD_NOW = 'Register to donate'
 export const DONATE_BLOOD = 'Donate Blood'
 export const REGISTER_NOW = 'Register Now'
 export const READ_FULL_STORY = 'Read full Story'
@@ -549,4 +549,3 @@ export const INPUT_CHIP_DATA: IChipInputData = {
   active: undefined,
   data: [{ label: 'Blogs' }, { label: 'Faqs' }]
 }
-
